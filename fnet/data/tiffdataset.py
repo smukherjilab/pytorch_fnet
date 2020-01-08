@@ -28,6 +28,7 @@ class TiffDataset(FnetDataset):
         element = self.df.iloc[index, :]
 
         im_out = [TifReader(element['path_signal']).get_image()]
+
         if isinstance(element['path_target'], str):
             im_out.append(TifReader(element['path_target']).get_image())
         
@@ -44,7 +45,9 @@ class TiffDataset(FnetDataset):
         im_out = [torch.from_numpy(im).float() for im in im_out]
         
         #unsqueeze to make the first dimension be the channel dimension
-        im_out = [torch.unsqueeze(im, 0) for im in im_out]
+        for i in range(len(im_out)):
+            if len(im_out[i].shape) < 3:
+                im_out[i] = torch.unsqueeze(im_out[i], 0)
         
         return im_out
     

@@ -60,9 +60,10 @@ class BufferedPatchDataset(FnetDataset):
             self.buffer.append(datum)
             
         self.remaining_to_be_in_buffer = shuffed_data_order[i+1:]
-            
-        self.patch_size = [datum_size[0]] + patch_size
-
+        
+        # modified by Shixing, the old ver assumes same num of channels in and out
+        # self.patch_size = [datum_size[0]] + patch_size
+        self.patch_size = patch_size
             
     def __len__(self):
         return self.npatches
@@ -108,14 +109,18 @@ class BufferedPatchDataset(FnetDataset):
                                    
         datum = self.buffer[buffer_index]
 
-        starts = np.array([np.random.randint(0, d - p + 1) if d - p + 1 >= 1 else 0 for d, p in zip(datum[0].size(), self.patch_size)])
-
+        # modified by Shixing
+        len_datum = len(datum)
+        channels = [d.size()[0] for d in datum]
+        # OLD VERSION: starts = np.array([np.random.randint(0, d - p + 1) if d - p + 1 >= 1 else 0 for d, p in zip(datum[0].size(), self.patch_size)])
+        starts = np.array([np.random.randint(0, d - p + 1) if d - p + 1 >= 1 else 0 for d, p in zip(datum[0][0].size(), self.patch_size)])
         ends = starts + np.array(self.patch_size)
-        
+        starts_long = [0] + list(starts)
+        ends_list = [[channels[i]]+list(ends) for i in range(len_datum)]
         #thank you Rory for this weird trick
-        index = [slice(s, e) for s,e in zip(starts,ends)]
+        index_list = [[slice(s, e) for s,e in zip(starts_long,ends_list[i])] for i in range(len_datum)]
         
-        patch = [d[tuple(index)] for d in datum]
+        patch = [d[tuple(index_list[i])] for i,d in enumerate(datum)]
         if self.dim_squeeze is not None:
             patch = [torch.squeeze(d, self.dim_squeeze) for d in patch]
         return patch

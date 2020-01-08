@@ -83,6 +83,8 @@ class Model(object):
         self.net.train()
         signal = torch.tensor(signal, dtype=torch.float32, device=self.device)
         target = torch.tensor(target, dtype=torch.float32, device=self.device)
+        print(f"fnet/fnet_model.py: the size of signal is {signal.size()}")
+        print(f"fnet/fnet_model.py: the size of target is {target.size()}")
         if len(self.gpu_ids) > 1:
             module = torch.nn.DataParallel(
                 self.net,

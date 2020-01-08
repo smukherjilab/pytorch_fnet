@@ -1,4 +1,5 @@
 import argparse
+import fnet
 import fnet.data
 import fnet.fnet_model
 import json

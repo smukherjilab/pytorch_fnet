@@ -78,15 +78,20 @@ def main():
         return
     if opts.class_dataset == 'TiffDataset':
         if opts.propper_kwargs.get('action') == '-':
-            opts.propper_kwargs['n_max_pixels'] = 6000000
+            # opts.propper_kwargs['n_max_pixels'] = 6000000
+            opts.propper_kwargs['n_max_pixels'] = 60000000
     propper = fnet.transforms.Propper(**opts.propper_kwargs)
     print(propper)
     model = None
     dataset = get_dataset(opts, propper)
+    print(f"*** type(dataset[0])={type(dataset[0])}")
     entries = []
     indices = range(len(dataset)) if opts.n_images < 0 else range(min(opts.n_images, len(dataset)))
+    print(f"*** length of indices = {len(indices)}")
     for idx in indices:
         entry = get_prediction_entry(dataset, idx)
+        for testItem in entry.items():
+            print(f"*** {testItem}")
         data = [torch.unsqueeze(d, 0) for d in dataset[idx]]  # make batch of size 1
         signal = data[0]
         target = data[1] if (len(data) > 1) else None

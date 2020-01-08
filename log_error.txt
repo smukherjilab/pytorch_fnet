@@ -1,0 +1,120 @@
+Using existing train/test split.
+fnet/nn_module/fnet_nn_2d5i6o: depth=4
+Model instianted from: fnet_nn_2d5i6o
+fnet_nn_2d5i6o | {} | iter: 0
+  0%|          | 0/8 [00:00<?, ?it/s]buffering images:   0%|          | 0/8 [00:00<?, ?it/s]buffering images:  12%|█▎        | 1/8 [00:00<00:04,  1.70it/s]buffering images:  12%|█▎        | 1/8 [00:00<00:04,  1.70it/s]buffering images:  25%|██▌       | 2/8 [00:01<00:04,  1.43it/s]buffering images:  25%|██▌       | 2/8 [00:01<00:04,  1.43it/s]buffering images:  38%|███▊      | 3/8 [00:02<00:03,  1.44it/s]buffering images:  38%|███▊      | 3/8 [00:02<00:03,  1.44it/s]buffering images:  50%|█████     | 4/8 [00:02<00:02,  1.44it/s]buffering images:  50%|█████     | 4/8 [00:02<00:02,  1.44it/s]buffering images:  62%|██████▎   | 5/8 [00:03<00:02,  1.49it/s]buffering images:  62%|██████▎   | 5/8 [00:03<00:02,  1.49it/s]buffering images:  75%|███████▌  | 6/8 [00:03<00:01,  1.52it/s]buffering images:  75%|███████▌  | 6/8 [00:03<00:01,  1.52it/s]buffering images:  88%|████████▊ | 7/8 [00:04<00:00,  1.55it/s]buffering images:  88%|████████▊ | 7/8 [00:04<00:00,  1.55it/s]buffering images: 100%|██████████| 8/8 [00:05<00:00,  1.57it/s]
+<fnet.data.tiffdataset.TiffDataset object at 0x7f05506b9e10>
+fnet/fnet_model.py: the size of signal is torch.Size([12, 5, 128, 128])
+fnet/fnet_model.py: the size of target is torch.Size([12, 5, 128, 128])
+FLAG 1: n_in_channels=5, mult_chan=5, depth=4
+FLAG 3: size of x is torch.Size([12, 5, 128, 128])
+FLAG 13: size of x is torch.Size([12, 5, 128, 128])
+FLAG 14: size of x is torch.Size([12, 25, 128, 128])
+FLAG 15: size of x is torch.Size([12, 25, 128, 128])
+FLAG 16: size of x is torch.Size([12, 25, 128, 128])
+FLAG 17: size of x is torch.Size([12, 25, 128, 128])
+FLAG 18: size of x is torch.Size([12, 25, 128, 128])
+FLAG 4: size of x_2conv_more is torch.Size([12, 25, 128, 128])
+FLAG 5: size of x_conv_down is torch.Size([12, 25, 64, 64])
+FLAG 6: size of x_bn0 is torch.Size([12, 25, 64, 64])
+FLAG 7: size of x_relu0 is torch.Size([12, 25, 64, 64])
+FLAG 3: size of x is torch.Size([12, 25, 64, 64])
+FLAG 13: size of x is torch.Size([12, 25, 64, 64])
+FLAG 14: size of x is torch.Size([12, 50, 64, 64])
+FLAG 15: size of x is torch.Size([12, 50, 64, 64])
+FLAG 16: size of x is torch.Size([12, 50, 64, 64])
+FLAG 17: size of x is torch.Size([12, 50, 64, 64])
+FLAG 18: size of x is torch.Size([12, 50, 64, 64])
+FLAG 4: size of x_2conv_more is torch.Size([12, 50, 64, 64])
+FLAG 5: size of x_conv_down is torch.Size([12, 50, 32, 32])
+FLAG 6: size of x_bn0 is torch.Size([12, 50, 32, 32])
+FLAG 7: size of x_relu0 is torch.Size([12, 50, 32, 32])
+FLAG 3: size of x is torch.Size([12, 50, 32, 32])
+FLAG 13: size of x is torch.Size([12, 50, 32, 32])
+FLAG 14: size of x is torch.Size([12, 100, 32, 32])
+FLAG 15: size of x is torch.Size([12, 100, 32, 32])
+FLAG 16: size of x is torch.Size([12, 100, 32, 32])
+FLAG 17: size of x is torch.Size([12, 100, 32, 32])
+FLAG 18: size of x is torch.Size([12, 100, 32, 32])
+FLAG 4: size of x_2conv_more is torch.Size([12, 100, 32, 32])
+FLAG 5: size of x_conv_down is torch.Size([12, 100, 16, 16])
+FLAG 6: size of x_bn0 is torch.Size([12, 100, 16, 16])
+FLAG 7: size of x_relu0 is torch.Size([12, 100, 16, 16])
+FLAG 3: size of x is torch.Size([12, 100, 16, 16])
+FLAG 13: size of x is torch.Size([12, 100, 16, 16])
+FLAG 14: size of x is torch.Size([12, 200, 16, 16])
+FLAG 15: size of x is torch.Size([12, 200, 16, 16])
+FLAG 16: size of x is torch.Size([12, 200, 16, 16])
+FLAG 17: size of x is torch.Size([12, 200, 16, 16])
+FLAG 18: size of x is torch.Size([12, 200, 16, 16])
+FLAG 4: size of x_2conv_more is torch.Size([12, 200, 16, 16])
+FLAG 5: size of x_conv_down is torch.Size([12, 200, 8, 8])
+FLAG 6: size of x_bn0 is torch.Size([12, 200, 8, 8])
+FLAG 7: size of x_relu0 is torch.Size([12, 200, 8, 8])
+FLAG 2: size of x is torch.Size([12, 200, 8, 8])
+FLAG 13: size of x is torch.Size([12, 200, 8, 8])
+FLAG 14: size of x is torch.Size([12, 400, 8, 8])
+FLAG 15: size of x is torch.Size([12, 400, 8, 8])
+FLAG 16: size of x is torch.Size([12, 400, 8, 8])
+FLAG 17: size of x is torch.Size([12, 400, 8, 8])
+FLAG 18: size of x is torch.Size([12, 400, 8, 8])
+FLAG 8: size of x_sub_u is torch.Size([12, 400, 8, 8])
+FLAG 9: size of x_convt is torch.Size([12, 200, 16, 16])
+FLAG 10: size of x_bn1 is torch.Size([12, 200, 16, 16])
+FLAG 11
+FLAG 12: size of x_cat is torch.Size([12, 400, 16, 16])
+FLAG 13: size of x is torch.Size([12, 400, 16, 16])
+FLAG 14: size of x is torch.Size([12, 200, 16, 16])
+FLAG 15: size of x is torch.Size([12, 200, 16, 16])
+FLAG 16: size of x is torch.Size([12, 200, 16, 16])
+FLAG 17: size of x is torch.Size([12, 200, 16, 16])
+FLAG 18: size of x is torch.Size([12, 200, 16, 16])
+FLAG 8: size of x_sub_u is torch.Size([12, 200, 16, 16])
+FLAG 9: size of x_convt is torch.Size([12, 100, 32, 32])
+FLAG 10: size of x_bn1 is torch.Size([12, 100, 32, 32])
+FLAG 11
+FLAG 12: size of x_cat is torch.Size([12, 200, 32, 32])
+FLAG 13: size of x is torch.Size([12, 200, 32, 32])
+FLAG 14: size of x is torch.Size([12, 100, 32, 32])
+FLAG 15: size of x is torch.Size([12, 100, 32, 32])
+FLAG 16: size of x is torch.Size([12, 100, 32, 32])
+FLAG 17: size of x is torch.Size([12, 100, 32, 32])
+FLAG 18: size of x is torch.Size([12, 100, 32, 32])
+FLAG 8: size of x_sub_u is torch.Size([12, 100, 32, 32])
+FLAG 9: size of x_convt is torch.Size([12, 50, 64, 64])
+FLAG 10: size of x_bn1 is torch.Size([12, 50, 64, 64])
+FLAG 11
+FLAG 12: size of x_cat is torch.Size([12, 100, 64, 64])
+FLAG 13: size of x is torch.Size([12, 100, 64, 64])
+FLAG 14: size of x is torch.Size([12, 50, 64, 64])
+FLAG 15: size of x is torch.Size([12, 50, 64, 64])
+FLAG 16: size of x is torch.Size([12, 50, 64, 64])
+FLAG 17: size of x is torch.Size([12, 50, 64, 64])
+FLAG 18: size of x is torch.Size([12, 50, 64, 64])
+FLAG 8: size of x_sub_u is torch.Size([12, 50, 64, 64])
+FLAG 9: size of x_convt is torch.Size([12, 25, 128, 128])
+FLAG 10: size of x_bn1 is torch.Size([12, 25, 128, 128])
+FLAG 11
+FLAG 12: size of x_cat is torch.Size([12, 50, 128, 128])
+FLAG 13: size of x is torch.Size([12, 50, 128, 128])
+FLAG 14: size of x is torch.Size([12, 25, 128, 128])
+FLAG 15: size of x is torch.Size([12, 25, 128, 128])
+FLAG 16: size of x is torch.Size([12, 25, 128, 128])
+FLAG 17: size of x is torch.Size([12, 25, 128, 128])
+FLAG 18: size of x is torch.Size([12, 25, 128, 128])
+Traceback (most recent call last):
+  File "train_model.py", line 161, in <module>
+    main()
+  File "train_model.py", line 128, in main
+    loss_batch = model.do_train_iter(signal, target)
+  File "/data/wangshixing/ShankarCodes/pytorch_fnet/fnet/fnet_model.py", line 96, in do_train_iter
+    output = module(signal)
+  File "/data/wangshixing/miniconda3/envs/fnet/lib/python3.6/site-packages/torch/nn/modules/module.py", line 491, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/data/wangshixing/ShankarCodes/pytorch_fnet/fnet/nn_modules/fnet_nn_2d_params.py", line 24, in forward
+    return self.conv_out(x_rec)
+  File "/data/wangshixing/miniconda3/envs/fnet/lib/python3.6/site-packages/torch/nn/modules/module.py", line 491, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/data/wangshixing/miniconda3/envs/fnet/lib/python3.6/site-packages/torch/nn/modules/conv.py", line 301, in forward
+    self.padding, self.dilation, self.groups)
+RuntimeError: Given groups=1, weight[6, 5, 3, 3], so expected input[12, 25, 128, 128] to have 5 channels, but got 25 channels instead

@@ -95,7 +95,8 @@ class Padder(object):
     
 
 class Cropper(object):
-    def __init__(self, cropping, by=16, offset='mid', n_max_pixels=9732096):
+    # def __init__(self, cropping, by=16, offset='mid', n_max_pixels=9732096):
+    def __init__(self, cropping, by=16, offset='mid', n_max_pixels=97320960):
         """Crop input array to given shape."""
         self.cropping = cropping
         self.offset = offset
@@ -127,7 +128,12 @@ class Cropper(object):
         return value
 
     def _calc_shape_crop(self, shape_in):
-        croppings = (self.cropping, )*len(shape_in) if isinstance(self.cropping, (str, int)) else self.cropping
+        # modified by Shixing
+        if len(shape_in)==2:
+            croppings = (self.cropping, )*len(shape_in) if isinstance(self.cropping, (str, int)) else self.cropping
+        elif len(shape_in)==3:
+            croppings = (None,)+(self.cropping,)*2 if isinstance(self.cropping, (str,int)) else self.cropping
+        # end of mod
         shape_crop = []
         for i in range(len(shape_in)):
             if croppings[i] is None:
